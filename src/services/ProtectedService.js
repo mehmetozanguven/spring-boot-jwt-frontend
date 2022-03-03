@@ -1,5 +1,4 @@
 import { api } from "boot/axios";
-import { getCookieWithName } from "src/utils/CookieUtils";
 
 export class ProtectedService {
   getUserInfo(jwt) {
@@ -12,10 +11,9 @@ export class ProtectedService {
   }
 
   doSimplePostRequest(jwt) {
-    return api.post("/doSimplePostRequest",new DummyRequestBody("dummy") ,{
+    return api.post("/doSimplePostRequest", new DummyRequestBody("dummy"), {
       headers: {
         Authorization: "Bearer " + jwt,
-        "X-XSRF-TOKEN": getCookieWithName("XSRF-TOKEN")
       },
       withCredentials: true,
     });

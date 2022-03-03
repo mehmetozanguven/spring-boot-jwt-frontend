@@ -1,6 +1,5 @@
 import { boot } from "quasar/wrappers";
 import axios from "axios";
-import { getCookieWithName } from "src/utils/CookieUtils";
 /*
 A common use case for Quasar applications is to run code
 before the root Vue app instance is instantiated,
